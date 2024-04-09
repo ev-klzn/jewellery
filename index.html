@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240406112047">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240409174454">
 	<link rel="shortcut icon" href="favicon.ico">
 	<meta name="robots" content="noindex, nofollow">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,15 +16,74 @@
 	<div class="wrapper">
 		<header class="header">
 			<div class="header__container">
+				<div class="header__logo logo"><img src="img/logo.svg" alt="logo"></div>
+				<div class="header__menu menu">
+					<nav class="menu__body">
+						<ul class="menu__list">
+							<li class="menu__item">
+								<a class="menu__link" href="#">Shop</a>
+							</li>
+							<li class="menu__item">
+								<a class="menu__link" href="#">Product</a>
+							</li>
+							<li class="menu__item">
+								<a class="menu__link" href="#">Blog</a>
+							</li>
+							<li class="menu__item">
+								<a class="menu__link" href="#">Pages</a>
+							</li>
+							<li class="menu__item">
+								<a class="menu__link" href="#">Cantact</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<div data-da=".menu__list, 767.98" class="header__action action-header">
+					<button class="action-header__button button">
+						<span>Log In</span>
+					</button>
+				</div>
+				<button type="button" class="menu__icon icon-menu"><span></span></button>
 			</div>
 		</header>
-		<main class="page"></main>
+
+		<main class="page">
+			<section class="page__hero hero">
+				<div class="hero__container">
+					<div class="hero__l-img">
+						<div class="hero__l-body">
+							<picture><source srcset="img/hero-1.webp" type="image/webp"><img class="hero__l-i ibg ibg-contain" src="img/hero-1.jpg" alt="Image" /></picture>
+						</div>
+					</div>
+					<div class="hero__body">
+						<h1 class="hero__title">Take A Moment The Grand Collection</h1>
+						<div class="hero__text">
+							<p>
+								There are many variations of passages of Lorem Ipsum
+								available, but the majority have suffered alteration in some
+								form, by injected humour, or randomised
+							</p>
+						</div>
+					</div>
+					<div class="hero__r-img">
+						<div class="hero__r-body">
+							<picture><source srcset="img/hero-2.webp" type="image/webp"><img class="hero__r-i ibg ibg-contain" src="img/hero-2.jpg" alt="Image" /></picture>
+						</div>
+					</div>
+					<div class="hero__decor">
+						<img class="hero__decor-left" src="img/hero-d-left.svg" alt="Image" />
+
+						<img class="hero__decor-right" src="img/hero-d-right.svg" alt="Image" />
+					</div>
+				</div>
+			</section>
+		</main>
 		<footer class="footer">
 			<div class="footer__container">
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20240406112047"></script>
+	<script src="js/app.min.js?_v=20240409174454"></script>
 </body>
 
 </html>
