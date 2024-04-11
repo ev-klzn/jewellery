@@ -1334,6 +1334,12 @@ textarea.input {
   .custom__img-2 {
     max-width: 100%
   }
+  .item-popular {
+    opacity: 1
+  }
+  .item-popular-2 {
+    opacity: 1
+  }
   .deals__body {
     grid-template-columns: 1fr;
     justify-items: center
