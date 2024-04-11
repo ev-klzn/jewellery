@@ -272,7 +272,7 @@ textarea.input {
   aspect-ratio: 184/31
 }
 .menu__body {
-  gap: 1.25rem
+  gap: .625rem
 }
 .menu__list {
   display: flex;
@@ -849,9 +849,9 @@ textarea.input {
     column-gap: 2.1875rem
   }
   .menu__list {
-    -webkit-column-gap: 2.1875rem;
-    -moz-column-gap: 2.1875rem;
-    column-gap: 2.1875rem
+    -webkit-column-gap: 1.25rem;
+    -moz-column-gap: 1.25rem;
+    column-gap: 1.25rem
   }
   .action-header {
     -webkit-column-gap: 2.1875rem;
@@ -1153,7 +1153,7 @@ textarea.input {
 }
 @media (max-width:61.99875em) {
   .menu__list {
-    row-gap: .9375rem
+    row-gap: .625rem
   }
   .footer__first-floor {
     grid-template-columns: 1fr 1fr;
@@ -1295,9 +1295,9 @@ textarea.input {
     grid-template-columns: auto 1fr auto auto
   }
   .menu__list {
-    -webkit-column-gap: .9375rem;
-    -moz-column-gap: .9375rem;
-    column-gap: .9375rem
+    -webkit-column-gap: .625rem;
+    -moz-column-gap: .625rem;
+    column-gap: .625rem
   }
   .menu__list {
     row-gap: 1.5625rem;
@@ -1772,18 +1772,18 @@ textarea.input {
       column-gap: calc(.9375rem + 1.25 * (100vw - 47.99875rem)/ 33.87625)
     }
   }
-  @supports ((-moz-column-gap:clamp(0.9375rem ,-0.8336062322rem + 3.6899007417vw ,2.1875rem)) or (column-gap:clamp(0.9375rem ,-0.8336062322rem + 3.6899007417vw ,2.1875rem))) {
+  @supports ((-moz-column-gap:clamp(0.625rem ,-0.2605531161rem + 1.8449503708vw ,1.25rem)) or (column-gap:clamp(0.625rem ,-0.2605531161rem + 1.8449503708vw ,1.25rem))) {
     .menu__list {
-      -webkit-column-gap: clamp(.9375rem ,-.8336062322rem + 3.6899007417vw ,2.1875rem);
-      -moz-column-gap: clamp(.9375rem ,-.8336062322rem + 3.6899007417vw ,2.1875rem);
-      column-gap: clamp(.9375rem ,-.8336062322rem + 3.6899007417vw ,2.1875rem)
+      -webkit-column-gap: clamp(.625rem ,-.2605531161rem + 1.8449503708vw ,1.25rem);
+      -moz-column-gap: clamp(.625rem ,-.2605531161rem + 1.8449503708vw ,1.25rem);
+      column-gap: clamp(.625rem ,-.2605531161rem + 1.8449503708vw ,1.25rem)
     }
   }
-  @supports not ((-moz-column-gap:clamp(0.9375rem ,-0.8336062322rem + 3.6899007417vw ,2.1875rem)) or (column-gap:clamp(0.9375rem ,-0.8336062322rem + 3.6899007417vw ,2.1875rem))) {
+  @supports not ((-moz-column-gap:clamp(0.625rem ,-0.2605531161rem + 1.8449503708vw ,1.25rem)) or (column-gap:clamp(0.625rem ,-0.2605531161rem + 1.8449503708vw ,1.25rem))) {
     .menu__list {
-      -webkit-column-gap: calc(.9375rem + 1.25 * (100vw - 47.99875rem)/ 33.87625);
-      -moz-column-gap: calc(.9375rem + 1.25 * (100vw - 47.99875rem)/ 33.87625);
-      column-gap: calc(.9375rem + 1.25 * (100vw - 47.99875rem)/ 33.87625)
+      -webkit-column-gap: calc(.625rem + .625 * (100vw - 47.99875rem)/ 33.87625);
+      -moz-column-gap: calc(.625rem + .625 * (100vw - 47.99875rem)/ 33.87625);
+      column-gap: calc(.625rem + .625 * (100vw - 47.99875rem)/ 33.87625)
     }
   }
   @supports ((-moz-column-gap:clamp(1.25rem ,-0.0783296742rem + 2.7674255563vw ,2.1875rem)) or (column-gap:clamp(1.25rem ,-0.0783296742rem + 2.7674255563vw ,2.1875rem))) {
