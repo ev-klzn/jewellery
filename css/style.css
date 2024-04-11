@@ -414,13 +414,11 @@ textarea.input {
 .hero__l-body {
   padding: .25rem;
   -webkit-transform: rotate(15deg);
-  transform: rotate(15deg);
-  background-color: rgba(255,255,255,.15)
+  transform: rotate(15deg)
 }
 .hero__r-body {
   -webkit-transform: rotate(-15deg);
-  transform: rotate(-15deg);
-  background-color: rgba(255,255,255,.15)
+  transform: rotate(-15deg)
 }
 .hero__l-i {
   aspect-ratio: 267/376;
@@ -613,6 +611,7 @@ textarea.input {
 }
 .custom-2__body {
   display: grid;
+  justify-items: start;
   grid-template-columns: 1fr;
   align-items: center;
   align-content: center
@@ -634,7 +633,7 @@ textarea.input {
   line-height: 1.3;
   color: #ff4242;
   transition: color .5s;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   align-self: center;
   gap: .5rem;
@@ -756,7 +755,7 @@ textarea.input {
   transition: all .5s;
   transition: color .5s;
   display: inline-flex;
-  align-items: center;
+  align-items: baseline;
   align-self: center;
   gap: .5rem;
   flex-direction: row-reverse;

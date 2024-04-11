@@ -8,7 +8,7 @@
 	<meta name="robots" content="noindex, nofollow">
 	<meta name="format-detection" content="telephone=no">
 	<meta name="description" content="Pretty Stones - Take A Moment The Grand Collection">
-	<link rel="stylesheet" href="css/style.min.css?_v=20240411152404">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240411171013">
 	<link rel="shortcut icon" href="favicon.ico">
 </head>
 
@@ -20,20 +20,28 @@
 				<div class="header__menu menu">
 					<nav class="menu__body">
 						<ul class="menu__list">
-							<li class="menu__item">
-								<a class="menu__link" href="#">Shop</a>
+							<li data-goto-header data-goto=".hero" class="menu__item">
+								<a class="menu__link" href="#">Home</a>
 							</li>
-							<li class="menu__item">
+							<li data-goto-header data-goto=".custom" class="menu__item">
+								<a class="menu__link" href="#">Collections</a>
+							</li>
+
+							<li data-goto-header data-goto=".popular" class="menu__item">
 								<a class="menu__link" href="#">Product</a>
 							</li>
-							<li class="menu__item">
-								<a class="menu__link" href="#">Blog</a>
-							</li>
-							<li class="menu__item">
+							<li data-goto-header data-goto=".custom-2" class="menu__item">
 								<a class="menu__link" href="#">Pages</a>
 							</li>
-							<li class="menu__item">
-								<a class="menu__link" href="#">Cantact</a>
+							<li data-goto-header data-goto=".deals" class="menu__item">
+								<a class="menu__link" href="#">Deals</a>
+							</li>
+							<li data-goto-header data-goto=".popular-2" class="menu__item">
+								<a class="menu__link" href="#">Blog</a>
+							</li>
+
+							<li data-goto-header data-goto=".footer__action" class="menu__item">
+								<a class="menu__link" href="#">Contact</a>
 							</li>
 						</ul>
 					</nav>
@@ -52,7 +60,7 @@
 				<div class="hero__container">
 					<div class="hero__l-img">
 						<div class="hero__l-body">
-							<picture><source srcset="img/hero-1.webp" type="image/webp"><img data-prlx-mouse class="hero__l-i ibg ibg-contain" src="img/hero-1.jpg" alt="Image"></picture>
+							<picture><source srcset="img/hero-1.webp" type="image/webp"><img data-prlx-mouse data-prlx-a="20" class="hero__l-i ibg ibg-contain" src="img/hero-1.jpg" alt="Image"></picture>
 						</div>
 					</div>
 					<div class="hero__body">
@@ -67,7 +75,7 @@
 					</div>
 					<div class="hero__r-img">
 						<div class="hero__r-body">
-							<picture><source srcset="img/hero-2.webp" type="image/webp"><img data-prlx-mouse class="hero__r-i ibg ibg-contain" src="img/hero-2.jpg" alt="Image"></picture>
+							<picture><source srcset="img/hero-2.webp" type="image/webp"><img data-prlx-mouse data-prlx-a="20" class="hero__r-i ibg ibg-contain" src="img/hero-2.jpg" alt="Image"></picture>
 						</div>
 					</div>
 					<div data-prlx-parent class="hero__decor">
@@ -106,10 +114,10 @@
 				<div class="custom__container">
 					<div class="custom__images">
 						<div class="custom__img-1">
-							<picture><source srcset="img/custom-1.webp" type="image/webp"><img data-prlx-mouse class="custom__image ibg" src="img/custom-1.jpg" alt="Image"></picture>
+							<picture><source srcset="img/custom-1.webp" type="image/webp"><img data-prlx-mouse data-prlx-a="20" class="custom__image ibg" src="img/custom-1.jpg" alt="Image"></picture>
 						</div>
 						<div class="custom__img-2">
-							<picture><source srcset="img/custom-2.webp" type="image/webp"><img data-prlx-mouse class="custom__image ibg" src="img/custom-2.jpg" alt="Image"></picture>
+							<picture><source srcset="img/custom-2.webp" type="image/webp"><img data-prlx-mouse data-prlx-a="20" class="custom__image ibg" src="img/custom-2.jpg" alt="Image"></picture>
 						</div>
 						<div data-prlx-parent class="custom__decor">
 							<picture><source srcset="img/d-l.webp" type="image/webp"><img data-prlx class="custom__decor-img ibg" src="img/d-l.png" alt="Image"></picture>
@@ -192,7 +200,7 @@
 			<section class="page__custom-2 custom-2">
 				<div class="custom-2__container">
 					<div class="custom-2__img-l">
-						<picture><source srcset="img/custom-3.webp" type="image/webp"><img data-prlx-mouse class="custom-2-l ibg" src="img/custom-3.jpg" alt="Image"></picture>
+						<picture><source srcset="img/custom-3.webp" type="image/webp"><img data-prlx-mouse data-prlx-a="20" class="custom-2-l ibg" src="img/custom-3.jpg" alt="Image"></picture>
 					</div>
 					<div class="custom-2__body">
 						<div class="custom-2__label">EXPLORE MORE COLLECTIONS</div>
@@ -212,7 +220,7 @@
 						<a href="#" target="_blank" class="custom-2__video _icon-link">Video Play</a>
 					</div>
 					<div class="custom-2__img-r">
-						<picture><source srcset="img/custom-4.webp" type="image/webp"><img data-prlx-mouse class="custom-2-r ibg" src="img/custom-4.jpg" alt="Image"></picture>
+						<picture><source srcset="img/custom-4.webp" type="image/webp"><img data-prlx-mouse data-prlx-a="20" class="custom-2-r ibg" src="img/custom-4.jpg" alt="Image"></picture>
 					</div>
 					<div data-prlx-parent class="custom-2__decor">
 						<picture><source srcset="img/d-l.webp" type="image/webp"><img data-prlx class="custom-2__decor-img ibg" src="img/d-l.png" alt="Image"></picture>
@@ -251,12 +259,8 @@
 			</section>
 			<section class="page__popular-2 popular-2">
 				<div class="popular-2__container">
-					<h2 class="popular-2__title title title--center">
-						Ours Popular Products
-					</h2>
-					<div class="popular-2__label label">
-						Best Seller Product This Week!
-					</div>
+					<h2 class="popular-2__title title title--center">Ours Blog</h2>
+					<div class="popular-2__label label">Recent Blog Posts</div>
 					<div class="popular-2__list">
 						<article data-watch class="item-popular-2">
 							<a href="#" class="item-popular-2__img">
@@ -409,7 +413,7 @@
 		</footer>
 
 	</div>
-	<script src="js/app.min.js?_v=20240411152404"></script>
+	<script src="js/app.min.js?_v=20240411171013"></script>
 </body>
 
 </html>
