@@ -728,7 +728,11 @@ textarea.input {
   line-height: 1.3;
   font-size: 1rem
 }
+.item-popular-2__content {
+  line-height: 1.3
+}
 .item-popular-2__content-more {
+  line-height: 1.3;
   color: #ff4242;
   transition: color .5s
 }
