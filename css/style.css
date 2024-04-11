@@ -1163,6 +1163,9 @@ textarea.input {
     grid-template-columns: 1fr 1fr;
     justify-items: center
   }
+  .footer__logo {
+    display: none
+  }
   .footer__subtitle {
     text-align: center
   }
