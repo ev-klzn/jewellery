@@ -406,10 +406,22 @@ textarea.input {
   color: #fff
 }
 .hero__l-img {
+  opacity: 0;
+  transition: all .5s;
   max-width: 20rem
 }
+.hero__l-img._watcher-view {
+  transition: all 2s ease .3s;
+  opacity: 1
+}
 .hero__r-img {
+  opacity: 0;
+  transition: all .5s;
   max-width: 20rem
+}
+.hero__r-img._watcher-view {
+  transition: all 2s ease .3s;
+  opacity: 1
 }
 .hero__l-body {
   padding: .25rem;
@@ -518,10 +530,22 @@ textarea.input {
   align-items: start
 }
 .custom__img-1 {
+  opacity: 0;
+  transition: all .5s;
   max-width: 14.6875rem
 }
+.custom__img-1._watcher-view {
+  transition: all 2s ease .3s;
+  opacity: 1
+}
 .custom__img-2 {
+  opacity: 0;
+  transition: all .5s;
   max-width: 14.6875rem
+}
+.custom__img-2._watcher-view {
+  transition: all 2s ease .3s;
+  opacity: 1
 }
 .custom__image {
   aspect-ratio: 235/391
@@ -602,12 +626,24 @@ textarea.input {
   gap: .9375rem
 }
 .custom-2__img-l {
+  opacity: 0;
+  transition: all .5s;
   align-items: start;
   max-width: 27.1875rem
 }
+.custom-2__img-l._watcher-view {
+  transition: all 2s ease .3s;
+  opacity: 1
+}
 .custom-2__img-r {
+  opacity: 0;
+  transition: all .5s;
   align-items: start;
   max-width: 16.125rem
+}
+.custom-2__img-r._watcher-view {
+  transition: all 2s ease .3s;
+  opacity: 1
 }
 .custom-2__body {
   display: grid;
@@ -1331,16 +1367,34 @@ textarea.input {
     gap: .9375rem;
     grid-template-columns: 1.3fr 1fr
   }
+  .hero__l-img {
+    opacity: 1
+  }
+  .hero__r-img {
+    opacity: 1
+  }
   .custom__images {
     grid-template-columns: 1fr
+  }
+  .custom__img-1 {
+    opacity: 1
   }
   .custom__img-1 {
     display: none
   }
   .custom__img-2 {
+    opacity: 1
+  }
+  .custom__img-2 {
     max-width: 100%
   }
   .item-popular {
+    opacity: 1
+  }
+  .custom-2__img-l {
+    opacity: 1
+  }
+  .custom-2__img-r {
     opacity: 1
   }
   .item-popular-2 {
