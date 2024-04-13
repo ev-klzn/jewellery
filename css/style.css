@@ -289,7 +289,7 @@ textarea.input {
 .header__container {
   position: relative;
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto 1fr;
   align-items: center;
   padding-top: .625rem;
   padding-bottom: .625rem
