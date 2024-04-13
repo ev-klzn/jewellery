@@ -393,30 +393,32 @@ textarea.input {
 }
 .hero__l-img {
   opacity: 0;
+  -webkit-transform: scale(0) translate(0,100%);
+  transform: scale(0) translate(0,100%);
   transition: all .5s;
   max-width: 20rem
 }
 .hero__l-img._watcher-view {
   transition: all 2s ease .3s;
-  opacity: 1
+  opacity: 1;
+  -webkit-transform: scale(1) rotate(15deg) translate(0,0);
+  transform: scale(1) rotate(15deg) translate(0,0)
 }
 .hero__r-img {
   opacity: 0;
+  -webkit-transform: scale(0) translate(0,100%);
+  transform: scale(0) translate(0,100%);
   transition: all .5s;
   max-width: 20rem
 }
 .hero__r-img._watcher-view {
   transition: all 2s ease .3s;
-  opacity: 1
+  opacity: 1;
+  -webkit-transform: scale(1) rotate(-15deg) translate(0,0);
+  transform: scale(1) rotate(-15deg) translate(0,0)
 }
 .hero__l-body {
-  padding: .25rem;
-  -webkit-transform: rotate(15deg);
-  transform: rotate(15deg)
-}
-.hero__r-body {
-  -webkit-transform: rotate(-15deg);
-  transform: rotate(-15deg)
+  padding: .25rem
 }
 .hero__l-i {
   aspect-ratio: 267/376;
@@ -1197,6 +1199,12 @@ textarea.input {
 @media (max-width:58.125em) {
   .hero__decor {
     display: none
+  }
+}
+@media (max-width:56.25em) {
+  .hero__r-img._watcher-view {
+    -webkit-transform: rotate(0);
+    transform: rotate(0)
   }
 }
 @media (max-width:48.06125em) {
