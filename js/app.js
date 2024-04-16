@@ -1,6 +1,6 @@
 (() => {
     "use strict";
-    const flsModules = {};
+    const modules_flsModules = {};
     function isWebp() {
         function testWebP(callback) {
             let webP = new Image;
@@ -348,7 +348,7 @@
             }
         }));
     }
-    function FLS(message) {
+    function functions_FLS(message) {
         setTimeout((() => {
             if (window.FLS) console.log(message);
         }), 0);
@@ -396,7 +396,7 @@
             }
         }
     }
-    let gotoBlock = (targetBlock, noHeader = false, speed = 500, offsetTop = 0) => {
+    let gotoblock_gotoBlock = (targetBlock, noHeader = false, speed = 500, offsetTop = 0) => {
         const targetBlockElement = document.querySelector(targetBlock);
         if (targetBlockElement) {
             let headerItem = "";
@@ -431,140 +431,9 @@
                     behavior: "smooth"
                 });
             }
-            FLS(`[gotoBlock]: Юхуу...їдемо до ${targetBlock}`);
-        } else FLS(`[gotoBlock]: Йой... Такого блоку немає на сторінці: ${targetBlock}`);
+            functions_FLS(`[gotoBlock]: Юхуу...їдемо до ${targetBlock}`);
+        } else functions_FLS(`[gotoBlock]: Йой... Такого блоку немає на сторінці: ${targetBlock}`);
     };
-    let formValidate = {
-        getErrors(form) {
-            let error = 0;
-            let formRequiredItems = form.querySelectorAll("*[data-required]");
-            if (formRequiredItems.length) formRequiredItems.forEach((formRequiredItem => {
-                if ((formRequiredItem.offsetParent !== null || formRequiredItem.tagName === "SELECT") && !formRequiredItem.disabled) error += this.validateInput(formRequiredItem);
-            }));
-            return error;
-        },
-        validateInput(formRequiredItem) {
-            let error = 0;
-            if (formRequiredItem.dataset.required === "email") {
-                formRequiredItem.value = formRequiredItem.value.replace(" ", "");
-                if (this.emailTest(formRequiredItem)) {
-                    this.addError(formRequiredItem);
-                    error++;
-                } else this.removeError(formRequiredItem);
-            } else if (formRequiredItem.type === "checkbox" && !formRequiredItem.checked) {
-                this.addError(formRequiredItem);
-                error++;
-            } else if (!formRequiredItem.value.trim()) {
-                this.addError(formRequiredItem);
-                error++;
-            } else this.removeError(formRequiredItem);
-            return error;
-        },
-        addError(formRequiredItem) {
-            formRequiredItem.classList.add("_form-error");
-            formRequiredItem.parentElement.classList.add("_form-error");
-            let inputError = formRequiredItem.parentElement.querySelector(".form__error");
-            if (inputError) formRequiredItem.parentElement.removeChild(inputError);
-            if (formRequiredItem.dataset.error) formRequiredItem.parentElement.insertAdjacentHTML("beforeend", `<div class="form__error">${formRequiredItem.dataset.error}</div>`);
-        },
-        removeError(formRequiredItem) {
-            formRequiredItem.classList.remove("_form-error");
-            formRequiredItem.parentElement.classList.remove("_form-error");
-            if (formRequiredItem.parentElement.querySelector(".form__error")) formRequiredItem.parentElement.removeChild(formRequiredItem.parentElement.querySelector(".form__error"));
-        },
-        formClean(form) {
-            form.reset();
-            setTimeout((() => {
-                let inputs = form.querySelectorAll("input,textarea");
-                for (let index = 0; index < inputs.length; index++) {
-                    const el = inputs[index];
-                    el.parentElement.classList.remove("_form-focus");
-                    el.classList.remove("_form-focus");
-                    formValidate.removeError(el);
-                }
-                let checkboxes = form.querySelectorAll(".checkbox__input");
-                if (checkboxes.length > 0) for (let index = 0; index < checkboxes.length; index++) {
-                    const checkbox = checkboxes[index];
-                    checkbox.checked = false;
-                }
-                if (flsModules.select) {
-                    let selects = form.querySelectorAll("div.select");
-                    if (selects.length) for (let index = 0; index < selects.length; index++) {
-                        const select = selects[index].querySelector("select");
-                        flsModules.select.selectBuild(select);
-                    }
-                }
-            }), 0);
-        },
-        emailTest(formRequiredItem) {
-            return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(formRequiredItem.value);
-        }
-    };
-    function formSubmit() {
-        const forms = document.forms;
-        if (forms.length) for (const form of forms) {
-            form.addEventListener("submit", (function(e) {
-                const form = e.target;
-                formSubmitAction(form, e);
-            }));
-            form.addEventListener("reset", (function(e) {
-                const form = e.target;
-                formValidate.formClean(form);
-            }));
-        }
-        async function formSubmitAction(form, e) {
-            const error = !form.hasAttribute("data-no-validate") ? formValidate.getErrors(form) : 0;
-            if (error === 0) {
-                const ajax = form.hasAttribute("data-ajax");
-                if (ajax) {
-                    e.preventDefault();
-                    const formAction = form.getAttribute("action") ? form.getAttribute("action").trim() : "#";
-                    const formMethod = form.getAttribute("method") ? form.getAttribute("method").trim() : "GET";
-                    const formData = new FormData(form);
-                    form.classList.add("_sending");
-                    const response = await fetch(formAction, {
-                        method: formMethod,
-                        body: formData
-                    });
-                    if (response.ok) {
-                        let responseResult = await response.json();
-                        form.classList.remove("_sending");
-                        formSent(form, responseResult);
-                    } else {
-                        alert("Помилка");
-                        form.classList.remove("_sending");
-                    }
-                } else if (form.hasAttribute("data-dev")) {
-                    e.preventDefault();
-                    formSent(form);
-                }
-            } else {
-                e.preventDefault();
-                if (form.querySelector("._form-error") && form.hasAttribute("data-goto-error")) {
-                    const formGoToErrorClass = form.dataset.gotoError ? form.dataset.gotoError : "._form-error";
-                    gotoBlock(formGoToErrorClass, true, 1e3);
-                }
-            }
-        }
-        function formSent(form, responseResult = ``) {
-            document.dispatchEvent(new CustomEvent("formSent", {
-                detail: {
-                    form
-                }
-            }));
-            setTimeout((() => {
-                if (flsModules.popup) {
-                    const popup = form.dataset.popupMessage;
-                    popup ? flsModules.popup.open(popup) : null;
-                }
-            }), 0);
-            formValidate.formClean(form);
-            formLogging(`Форму відправлено!`);
-        }
-        function formLogging(message) {
-            FLS(`[Форми]: ${message}`);
-        }
-    }
     function ssr_window_esm_isObject(obj) {
         return obj !== null && typeof obj === "object" && "constructor" in obj && obj.constructor === Object;
     }
@@ -4071,7 +3940,7 @@
             this.scrollWatcherLogging(`Я перестав стежити за ${targetElement.classList}`);
         }
         scrollWatcherLogging(message) {
-            this.config.logging ? FLS(`[Спостерігач]: ${message}`) : null;
+            this.config.logging ? functions_FLS(`[Спостерігач]: ${message}`) : null;
         }
         scrollWatcherCallback(entry, observer) {
             const targetElement = entry.target;
@@ -4084,7 +3953,7 @@
             }));
         }
     }
-    flsModules.watcher = new ScrollWatcher({});
+    modules_flsModules.watcher = new ScrollWatcher({});
     class parallax_Parallax {
         constructor(elements) {
             if (elements.length) this.elements = Array.from(elements).map((el => new parallax_Parallax.Each(el, this.options)));
@@ -4154,7 +4023,7 @@
             if (parameters.axis == "v") el.style.transform = `translate3D(0, ${(parameters.direction * (this.value / parameters.coefficient)).toFixed(2)}px,0) ${parameters.additionalProperties}`; else if (parameters.axis == "h") el.style.transform = `translate3D(${(parameters.direction * (this.value / parameters.coefficient)).toFixed(2)}px,0,0) ${parameters.additionalProperties}`;
         }
     };
-    if (document.querySelectorAll("[data-prlx-parent]")) flsModules.parallax = new parallax_Parallax(document.querySelectorAll("[data-prlx-parent]"));
+    if (document.querySelectorAll("[data-prlx-parent]")) modules_flsModules.parallax = new parallax_Parallax(document.querySelectorAll("[data-prlx-parent]"));
     let addWindowScrollEvent = false;
     function pageNavigation() {
         document.addEventListener("click", pageNavigationAction);
@@ -4168,14 +4037,14 @@
                     const noHeader = gotoLink.hasAttribute("data-goto-header") ? true : false;
                     const gotoSpeed = gotoLink.dataset.gotoSpeed ? gotoLink.dataset.gotoSpeed : 500;
                     const offsetTop = gotoLink.dataset.gotoTop ? parseInt(gotoLink.dataset.gotoTop) : 0;
-                    if (flsModules.fullpage) {
+                    if (modules_flsModules.fullpage) {
                         const fullpageSection = document.querySelector(`${gotoLinkSelector}`).closest("[data-fp-section]");
                         const fullpageSectionId = fullpageSection ? +fullpageSection.dataset.fpId : null;
                         if (fullpageSectionId !== null) {
-                            flsModules.fullpage.switchingSection(fullpageSectionId);
+                            modules_flsModules.fullpage.switchingSection(fullpageSectionId);
                             document.documentElement.classList.contains("menu-open") ? menuClose() : null;
                         }
-                    } else gotoBlock(gotoLinkSelector, noHeader, gotoSpeed, offsetTop);
+                    } else gotoblock_gotoBlock(gotoLinkSelector, noHeader, gotoSpeed, offsetTop);
                     e.preventDefault();
                 }
             } else if (e.type === "watcherCallback" && e.detail) {
@@ -4198,8 +4067,34 @@
         if (getHash()) {
             let goToHash;
             if (document.querySelector(`#${getHash()}`)) goToHash = `#${getHash()}`; else if (document.querySelector(`.${getHash()}`)) goToHash = `.${getHash()}`;
-            goToHash ? gotoBlock(goToHash, true, 500, 20) : null;
+            goToHash ? gotoblock_gotoBlock(goToHash, true, 500, 20) : null;
         }
+    }
+    function headerScroll() {
+        addWindowScrollEvent = true;
+        const header = document.querySelector("header.header");
+        const headerShow = header.hasAttribute("data-scroll-show");
+        const headerShowTimer = header.dataset.scrollShow ? header.dataset.scrollShow : 500;
+        const startPoint = header.dataset.scroll ? header.dataset.scroll : 1;
+        let scrollDirection = 0;
+        let timer;
+        document.addEventListener("windowScroll", (function(e) {
+            const scrollTop = window.scrollY;
+            clearTimeout(timer);
+            if (scrollTop >= startPoint) {
+                !header.classList.contains("_header-scroll") ? header.classList.add("_header-scroll") : null;
+                if (headerShow) {
+                    if (scrollTop > scrollDirection) header.classList.contains("_header-show") ? header.classList.remove("_header-show") : null; else !header.classList.contains("_header-show") ? header.classList.add("_header-show") : null;
+                    timer = setTimeout((() => {
+                        !header.classList.contains("_header-show") ? header.classList.add("_header-show") : null;
+                    }), headerShowTimer);
+                }
+            } else {
+                header.classList.contains("_header-scroll") ? header.classList.remove("_header-scroll") : null;
+                if (headerShow) header.classList.contains("_header-show") ? header.classList.remove("_header-show") : null;
+            }
+            scrollDirection = scrollTop <= 0 ? 0 : scrollTop;
+        }));
     }
     setTimeout((() => {
         if (addWindowScrollEvent) {
@@ -4214,6 +4109,6 @@
     menuInit();
     spollers();
     showMore();
-    formSubmit();
     pageNavigation();
+    headerScroll();
 })();

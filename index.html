@@ -8,13 +8,13 @@
 	<meta name="robots" content="noindex, nofollow">
 	<meta name="format-detection" content="telephone=no">
 	<meta name="description" content="Pretty Stones - Take A Moment The Grand Collection">
-	<link rel="stylesheet" href="css/style.min.css?_v=20240413120502">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240416094841">
 	<link rel="shortcut icon" href="favicon.ico">
 </head>
 
 <body>
 	<div class="wrapper">
-		<header class="header">
+		<header data-scroll class="header">
 			<div class="header__container">
 				<div class="header__logo logo"><img src="img/logo.svg" alt="logo"></div>
 				<div class="header__menu menu">
@@ -384,7 +384,8 @@
 							<p>
 								Subscribe to the newsletter and get some crispy stuff every week.
 							</p>
-							<form class="form" action="files/sendmail/sendmail.php" method="POST">
+							<form class="form" netlify name="email">
+								<!-- method="POST" -->
 								<input type="text" name="form[email]" data-error="Error" placeholder="E-mail" class="input">
 								<button type="submit" class="button-footer _icon-mail"></button>
 							</form>
@@ -409,7 +410,7 @@
 		</footer>
 
 	</div>
-	<script src="js/app.min.js?_v=20240413120502"></script>
+	<script src="js/app.min.js?_v=20240416094841"></script>
 </body>
 
 </html>

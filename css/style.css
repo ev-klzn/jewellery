@@ -281,11 +281,20 @@ textarea.input {
   z-index: 1
 }
 .header {
-  position: fixed;
+  position: absolute;
   width: 100%;
   z-index: 50;
   background-color: rgba(0,0,0,.937254902);
-  border-bottom: 1px solid rgba(255,255,255,.21)
+  border-bottom: 1px solid rgba(255,255,255,.21);
+  padding-top: 1.5625rem;
+  padding-bottom: 1.5625rem;
+  transition: all 1.5s
+}
+.header._header-scroll {
+  position: fixed;
+  padding-top: .625rem;
+  padding-bottom: .625rem;
+  opacity: .95
 }
 .header__container {
   position: relative;
@@ -856,7 +865,7 @@ textarea.input {
     margin-bottom: 5rem
   }
   .header__container {
-    min-height: 6.625rem
+    min-heigh: 6.625rem
   }
   .header__container {
     -webkit-column-gap: 2.1875rem;
@@ -1009,9 +1018,6 @@ textarea.input {
   }
   .label {
     margin-bottom: 1.875rem
-  }
-  .header__container {
-    min-height: 4.375rem
   }
   .footer {
     padding-top: 2.5rem
@@ -1166,6 +1172,10 @@ textarea.input {
   [class*=__decor] {
     display: none
   }
+  .header {
+    padding-top: .625rem;
+    padding-bottom: .625rem
+  }
   .footer__first-floor {
     grid-template-columns: 1fr 1fr;
     justify-items: center
@@ -1316,6 +1326,9 @@ textarea.input {
     transform: rotate(45deg)
   }
   .header__container {
+    min-heigh: 4.375rem
+  }
+  .header__container {
     -webkit-column-gap: .9375rem;
     -moz-column-gap: .9375rem;
     column-gap: .9375rem
@@ -1442,6 +1455,16 @@ textarea.input {
       column-gap: calc(.75rem + .5 * (100vw - 47.99875rem)/ 33.87625)
     }
   }
+  @supports (min-heigh:clamp(4.375rem ,1.187008782rem + 6.641821335vw ,6.625rem)) {
+    .header__container {
+      min-heigh: clamp(4.375rem ,1.187008782rem + 6.641821335vw ,6.625rem)
+    }
+  }
+  @supports not (min-heigh:clamp(4.375rem ,1.187008782rem + 6.641821335vw ,6.625rem)) {
+    .header__container {
+      min-heigh: calc(4.375rem + 2.25 * (100vw - 47.99875rem)/ 33.87625)
+    }
+  }
   @supports ((-moz-column-gap:clamp(0.9375rem ,-0.8336062322rem + 3.6899007417vw ,2.1875rem)) or (column-gap:clamp(0.9375rem ,-0.8336062322rem + 3.6899007417vw ,2.1875rem))) {
     .header__container {
       -webkit-column-gap: clamp(.9375rem ,-.8336062322rem + 3.6899007417vw ,2.1875rem);
@@ -1476,16 +1499,6 @@ textarea.input {
   @supports not (margin-bottom:clamp(1.875rem ,0.8648989899rem + 5.0505050505vw ,5rem)) {
     .label {
       margin-bottom: calc(1.875rem + 3.125 * (100vw - 20rem)/ 61.875)
-    }
-  }
-  @supports (min-height:clamp(4.375rem ,3.6477272727rem + 3.6363636364vw ,6.625rem)) {
-    .header__container {
-      min-height: clamp(4.375rem ,3.6477272727rem + 3.6363636364vw ,6.625rem)
-    }
-  }
-  @supports not (min-height:clamp(4.375rem ,3.6477272727rem + 3.6363636364vw ,6.625rem)) {
-    .header__container {
-      min-height: calc(4.375rem + 2.25 * (100vw - 20rem)/ 61.875)
     }
   }
   @supports (padding-top:clamp(2.5rem ,1.7929292929rem + 3.5353535354vw ,4.6875rem)) {
