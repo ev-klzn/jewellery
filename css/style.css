@@ -865,9 +865,6 @@ textarea.input {
     margin-bottom: 5rem
   }
   .header__container {
-    min-heigh: 6.625rem
-  }
-  .header__container {
     -webkit-column-gap: 2.1875rem;
     -moz-column-gap: 2.1875rem;
     column-gap: 2.1875rem
@@ -1197,13 +1194,13 @@ textarea.input {
   .hero__r-img {
     -webkit-transform: scale(1) rotate(0) translate(0,0);
     transform: scale(1) rotate(0) translate(0,0);
-    transition: all .1ms ease .01ms
+    transition: all .1ms ease
   }
   .hero__r-img._watcher-view {
     opacity: 1;
     -webkit-transform: scale(1) rotate(0) translate(0,0);
     transform: scale(1) rotate(0) translate(0,0);
-    transition: all .1ms ease .01ms
+    transition: all .1ms ease
   }
   .custom__images {
     align-items: center
@@ -1324,9 +1321,6 @@ textarea.input {
     bottom: calc(50% - .0625rem);
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg)
-  }
-  .header__container {
-    min-heigh: 4.375rem
   }
   .header__container {
     -webkit-column-gap: .9375rem;
@@ -1453,16 +1447,6 @@ textarea.input {
       -webkit-column-gap: calc(.75rem + .5 * (100vw - 47.99875rem)/ 33.87625);
       -moz-column-gap: calc(.75rem + .5 * (100vw - 47.99875rem)/ 33.87625);
       column-gap: calc(.75rem + .5 * (100vw - 47.99875rem)/ 33.87625)
-    }
-  }
-  @supports (min-heigh:clamp(4.375rem ,1.187008782rem + 6.641821335vw ,6.625rem)) {
-    .header__container {
-      min-heigh: clamp(4.375rem ,1.187008782rem + 6.641821335vw ,6.625rem)
-    }
-  }
-  @supports not (min-heigh:clamp(4.375rem ,1.187008782rem + 6.641821335vw ,6.625rem)) {
-    .header__container {
-      min-heigh: calc(4.375rem + 2.25 * (100vw - 47.99875rem)/ 33.87625)
     }
   }
   @supports ((-moz-column-gap:clamp(0.9375rem ,-0.8336062322rem + 3.6899007417vw ,2.1875rem)) or (column-gap:clamp(0.9375rem ,-0.8336062322rem + 3.6899007417vw ,2.1875rem))) {
