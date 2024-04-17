@@ -326,8 +326,7 @@ textarea.input {
   display: grid;
   grid-template-columns: 1.5fr 1.5fr 1fr 1fr;
   gap: 1.875rem;
-  align-items: start;
-  border-bottom: 1px solid #606060
+  align-items: start
 }
 .footer__logo {
   max-width: 11.5rem;
@@ -371,14 +370,14 @@ textarea.input {
 .footer__second-floor {
   display: grid;
   gap: .9375rem;
-  grid-template-columns: 1fr 4fr
+  grid-template-columns: 4fr 1fr
 }
 .footer__copy {
   transition: color .5s
 }
 .footer__description {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   flex-wrap: wrap
 }
 .spollers__body {
@@ -1183,10 +1182,18 @@ textarea.input {
   .footer__subtitle {
     text-align: center
   }
+  .footer__adress {
+    justify-content: center;
+    text-align: center
+  }
+  .footer__action {
+    justify-content: center;
+    text-align: center
+  }
   .footer__second-floor {
     justify-items: center;
     justify-content: center;
-    grid-template-columns: 1fr 2fr
+    grid-template-columns: 2fr 1fr
   }
   .footer__description {
     justify-content: center
