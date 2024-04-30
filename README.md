@@ -1,3 +1,3 @@
 # jewellery
 
-https://ev-klzn.github.io/jewellery/
+https://ev-klzn.com/jewellery/
