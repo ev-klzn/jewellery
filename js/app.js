@@ -3828,20 +3828,20 @@
                     autoHeight: true
                 },
                 640: {
-                    slidesPerView: 1.2,
+                    slidesPerView: 1.1,
                     spaceBetween: 20,
                     autoHeight: true
                 },
                 768: {
-                    slidesPerView: 2.3,
+                    slidesPerView: 2.1,
                     spaceBetween: 20
                 },
                 992: {
-                    slidesPerView: 2.4,
+                    slidesPerView: 3,
                     spaceBetween: 20
                 },
                 1268: {
-                    slidesPerView: 2.4,
+                    slidesPerView: 3,
                     spaceBetween: 30
                 }
             },
