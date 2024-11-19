@@ -1,3 +1,3 @@
 # jewellery
 
-https://ev-klzn.com/jewellery/
+https://webintersol.com/jewellery/
