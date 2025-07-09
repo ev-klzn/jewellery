@@ -373,7 +373,8 @@ textarea.input {
   grid-template-columns: 4fr 1fr
 }
 .footer__copy {
-  transition: color .5s
+  transition: color .5s;
+  line-height: 1.3;
 }
 .footer__description {
   display: flex;
